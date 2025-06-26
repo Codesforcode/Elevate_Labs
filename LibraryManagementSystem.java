@@ -99,13 +99,17 @@ class User {
 
 public class LibraryManagementSystem {
     public static void main(String[] args) {
+          Scanner sc = new Scanner(System.in);
 
         Library library = new Library();
-        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your name: ");
+        String userName = sc.nextLine();
+        User u1 = new User(userName);
+      
         library.addBook(new Book("The Alchemist", "Paulo Coelho",500));
         library.addBook(new Book("1984", "George Orwell",500));
         library.addBook(new Book("Clean Code", "Robert C. Martin",600));
-        System.out.println("Welcome to the Library System");
+        System.out.println("Welcome to the Library System\n: "+userName);
 
         while (true) {
             System.out.println("\n1. Show Books\n2. Issue Book\n3. Return Book\n4. Exit");
